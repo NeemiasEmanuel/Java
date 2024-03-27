@@ -1,0 +1,86 @@
+class exemplo {
+    public static void main(String[] args) {
+        Caneta c1 = new Caneta("Bic", "Azul");
+        c1.status();
+    }
+}
+ 
+class Caneta{
+    /* Atributos da classe */
+    public String modelo;
+    public String cor;
+    protected float carga;
+    private boolean tampada;
+    
+    /* Construtor da classe */
+    public Caneta(String modelo, String cor){
+        this.setModelo(modelo);
+        this.setCor(cor);
+        this.setCarga(1);
+        this.setTampada(true);
+    }
+    
+    /* Métodos especiais da classe - setters e getters */ 
+    public void setModelo(String modelo){
+        this.modelo = modelo;
+    }
+    
+    public String getModelo(){
+        return this.modelo;
+    }
+    
+    public void setCor(String cor){
+        this.cor = cor;
+    }
+    
+    public String getCor(){
+        return this.cor;
+    }
+    
+    public void setCarga(float carga){
+        this.carga = carga;
+    }
+    
+    public float getCarga(){
+        return this.carga;
+    }
+    
+    public void setTampada(boolean tampada){
+        this.tampada = tampada;
+    }
+    
+    public boolean getTampada(){
+        return this.tampada;
+    }
+    
+    /* Metodos da classe */
+    
+    /* Mostra os dados da instância */
+    public void status(){
+        System.out.println("Modelo: " + this.getModelo());
+        System.out.println("Cor: " + this.getCor());
+        System.out.println("Carga: " + this.getCarga());
+        System.out.println("Tampada: " + this.getTampada());
+    }
+    
+    public void tampar(){
+        
+        if(getTampada() == true){
+            System.out.println("Ja estou tampada!");
+        }
+        else{
+            this.setTampada(true);
+            System.out.println("Estou tampada!");
+        }
+    }
+    
+    public void destampar(){
+        if(getTampada() == false){
+            System.out.println("Ja estou destampada!");
+        }
+        else{
+            this.setTampada(false);
+            System.out.println("Estou destampada!");
+        }
+    }
+}
